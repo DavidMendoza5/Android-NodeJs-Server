@@ -32,7 +32,7 @@ const deleteData = async (schema, id) => {
     const data = await schema.findOneAndDelete({ _id:id })
     return data
   } catch(err) {
-    throw new Error('Error al eliminar en la base de datos')
+    throw new Error('Error al eliminar el dato en la base de datos')
   }
 }
 
