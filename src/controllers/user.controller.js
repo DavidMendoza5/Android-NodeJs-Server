@@ -18,7 +18,27 @@ const getUser = async (req, res, next) => {
   }
 }
 
+const updateUser = async (req, res, next) => {
+  try {
+    const user = await UserService.updateUser(req.params.id, req.body)
+    res.status(200).send(user)
+  } catch(err) {
+    res.status(500).send(err.message)
+  }
+}
+
+const deleteUser = async (req, res, next) => {
+  try {
+    const userEliminated = await UserService.deleteUser(req.params.id)
+    res.status(200).send(userEliminated)
+  } catch(err) {
+    res.status(500).send(err.message)
+  }
+}
+
 module.exports = {
   postUser,
-  getUser
+  getUser,
+  updateUser,
+  deleteUser
 }
