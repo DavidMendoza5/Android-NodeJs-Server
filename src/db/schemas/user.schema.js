@@ -6,22 +6,13 @@ const UserSchema = Schema({
   name: {
     type: String
   },
-  lastName: {
-    type: String
-  },
-  address: {
-    type: String
-  },
   phone: {
     type: Number
   },
   email: {
     type: String
   },
-  gender: {
-    type: String
-  },
-  birthDate: {
+  password: {
     type: String
   }
 },
