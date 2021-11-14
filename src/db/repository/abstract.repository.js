@@ -21,7 +21,7 @@ const getOne = async (schema, id) => {
 const updateData = async (schema, id, data) => {
   try {
     const dataUpdated = await schema.findOneAndUpdate({ _id:id }, data)
-    return dataUpdated._update
+    return dataUpdated
   } catch(err) {
     throw new Error('Error al actualizar en la base de datos')
   }
@@ -32,7 +32,7 @@ const deleteData = async (schema, id) => {
     const data = await schema.findOneAndDelete({ _id:id })
     return data
   } catch(err) {
-    throw new Error('Error al eliminar en la base de datos')
+    throw new Error('Error al eliminar el dato en la base de datos')
   }
 }
 
